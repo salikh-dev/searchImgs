@@ -1,0 +1,33 @@
+<nav class="container">
+    <a href="{% url 'app:home' %}"><i class="fa-solid fa-house icon home"
+            style="color: black; font-size: 1.6rem; margin-top:5px; margin-right: 10px;"></i></a>
+    <form action="{% url 'app:results' %}" method="get">
+        <div class="input-group">
+
+            <div id="search-autocomplete" class="form-outline w-75">
+                <input type="search" name="search" value="{{ value }}" id="input" class="form-control w-100"
+                    placeholder="Search" />
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+            </button>
+
+        </div>
+    </form>
+    <div class="dropdown">
+        <i class="fa-solid fa-user fa-lg icon profile" data-bs-toggle="dropdown" aria-expanded="false"></i>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'app:signup' %}" class="dropdown-item">Sign Up</a></li>
+            <li><a href="{% url 'login' %}" class="dropdown-item">Login</a></li>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'app:profile' %}" class="dropdown-item">Profile</a></li>
+            <li><a href="#" class="dropdown-item">Settings</a></li>
+            <hr>
+            <li><a href="{% url 'logout' %}" class="dropdown-item">Log Out</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
