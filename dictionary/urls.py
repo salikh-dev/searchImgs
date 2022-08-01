@@ -8,5 +8,6 @@ urlpatterns = [
     path('', home, name="home"),
     path("resaults/", results, name="results"),
     path("signup/", Signup.as_view(), name="signup"),
-    path("profile/", Profile.as_view(), name="profile")
+    path("profile/", Profile.as_view(), name="profile"),
+    path("<int:pk>/fullscreen/", fullscreen, name="fullscreen")
 ]

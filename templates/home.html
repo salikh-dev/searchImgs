@@ -27,7 +27,7 @@
         </div>
 
         <a href="{{ v.img.url }}" download class="btn btn-secondary">Download</a>
-        <a href="#"><i class="fa-solid fa-expand fa-lg text-dark"></i></a>
+        <a href="{% url 'app:fullscreen' v.pk %}"><i class="fa-solid fa-expand fa-lg text-dark"></i></a>
       </div>
     </div>
 
