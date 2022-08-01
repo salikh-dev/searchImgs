@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,20 @@
     <title>Full Screen</title>
 </head>
 <body>
-    <img  src="{{ img.img.url }}" alt=".." style="width: 100%;">
+    <style>
+        body{
+            display: grid;
+            place-items: center;
+            background-image: url({{ img.img.url }});
+            background-size: cover;
+            min-height: 90vh;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        a{
+            color: #fff;
+        }
+    </style>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

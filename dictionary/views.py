@@ -23,7 +23,7 @@ def results(request):
     return render(request, "results.html", context)
 
 def fullscreen(request, pk):
-    img = UploadImg.objects.get(id=pk)
+    img = UploadImg.objects.get(img_title=pk).all()
     return render(request,"fullscreen.html", {"img":img})
 
 class Signup(generic.CreateView):

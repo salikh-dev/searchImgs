@@ -9,5 +9,5 @@ urlpatterns = [
     path("resaults/", results, name="results"),
     path("signup/", Signup.as_view(), name="signup"),
     path("profile/", Profile.as_view(), name="profile"),
-    path("<int:pk>/fullscreen/", fullscreen, name="fullscreen")
+    path("<str:pk>/", fullscreen, name="fullscreen")
 ]
