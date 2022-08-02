@@ -50,15 +50,25 @@
               <div class="card" style="border-radius: 15px;">
                 <div class="card-body text-center">
                   <div class="mt-3 mb-4">
-                    <img src="{% static 'imgs/userprofile.png' %}"
+                    {% if request.user.img %}
+                    <img src="{{ request.user.img.url }}"
                       class="rounded-circle img-fluid" style="width: 100px;" />
+                      {% endif %}
+                      {% if not request.user.img %}
+                      <img src="{% static 'imgs/userprofile.png' %}"
+                        class="rounded-circle img-fluid" style="width: 100px;" />
+                        {% endif %}
                   </div>
-                  <h4 class="mb-2">{{ request.user.first_name }}. {{ request.user.last_name }}</h4>
+                  <h4 class="mb-2">{% if request.user.first_name %}{{ request.user.first_name }}{% endif %}{% if not request.user.first_name %}  {% endif %}.{% if request.user.last_name %}{{ request.user.last_name }}{% endif %}{% if not request.user.last_name %}  {% endif %} </h4>
                   <p class="text-muted mb-4">@{{request.user.username }}<span class="mx-2">|</span> <a
                       href="mailto:{{ request.user.email }}">{{ request.user.email }}</a></p>
                       <div class="flex">
-                        <p>Bio:</p>
-                        <h4>{{ request.user.bio }}</h4>
+                        {% if request.user.bio %}
+                        <h4>Bio: {{ request.user.bio }}</h4>
+                        {% endif %}
+                        {% if not request.user.bio %}
+                        <a href="#">your bio here</a>
+                        {% endif %}
                       </div>
                   <div class="mb-4 pb-2">
                     <button type="button" class="btn btn-outline-primary btn-floating">
@@ -71,9 +81,9 @@
                       <i class="fab fa-skype fa-lg"></i>
                     </button>
                   </div>
-                  <button type="button" class="btn btn-primary btn-rounded btn-lg">
-                    Message now
-                  </button>
+                  <a href="{% url 'app:settings' %}" class="btn btn-primary btn-rounded btn-lg">
+                    Edit Profile
+                  </a>
                   <div class="d-flex justify-content-between text-center mt-5 mb-2">
                     <div>
                       <p class="mb-2 h5">352</p>
@@ -90,7 +100,6 @@
                   </div>
                 </div>
               </div>
-      
             </div>
           </div>
         </div>

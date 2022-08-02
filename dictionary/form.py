@@ -11,11 +11,11 @@ User = get_user_model()
 class SignUp(UserCreationForm):
     class Meta:
         model = User
-        fields = ("first_name","last_name","username","email")  
+        fields = ("first_name","username")  
         field_classes = {"username": UsernameField}
 
 class User_change(UserChangeForm):
      class Meta:
         model = User
-        fields = ("first_name","last_name","username","email")  
+        fields = ("img","first_name","last_name","username","email", "bio")  
         field_classes = {"username": UsernameField}
