@@ -20,3 +20,8 @@ class User_change(UserChangeForm):
         fields = ("img","first_name","last_name","username","email", "bio", "facebook", "instagram", "telegram", "pinterest")  
         field_classes = {"username": UsernameField}
 
+class Sociallinks(User_change):
+    class Meta:
+        model = User
+        fields = ("facebook", "instagram", "telegram", "pinterest")  
+        field_classes = {"username": UsernameField}

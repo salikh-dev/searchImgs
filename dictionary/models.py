@@ -13,7 +13,6 @@ class MyUser(AbstractUser):
     pinterest = models.CharField(max_length=70, null=True, blank=True)
 
 
-
 class UploadImg(models.Model):
     img_title = models.CharField(max_length=150)
     img = models.FileField()
