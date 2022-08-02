@@ -56,6 +56,10 @@
                   <h4 class="mb-2">{{ request.user.first_name }}. {{ request.user.last_name }}</h4>
                   <p class="text-muted mb-4">@{{request.user.username }}<span class="mx-2">|</span> <a
                       href="mailto:{{ request.user.email }}">{{ request.user.email }}</a></p>
+                      <div class="flex">
+                        <p>Bio:</p>
+                        <h4>{{ request.user.bio }}</h4>
+                      </div>
                   <div class="mb-4 pb-2">
                     <button type="button" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-facebook-f fa-lg"></i>

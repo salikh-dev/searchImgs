@@ -2,7 +2,8 @@ from django.shortcuts import render, reverse
 from .models import *
 from .form import *
 from django.views import generic
-
+from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserChangeForm
 
 def home(request):
     imges = UploadImg.objects.all()
@@ -35,3 +36,12 @@ class Signup(generic.CreateView):
     
 class Profile(generic.TemplateView):
     template_name = "profile/profile.html"
+
+
+class Edit_profile(generic.UpdateView):
+    form_class = UserChangeForm
+    template_name = "profile/edit_profile.html"
+    success_url = reverse_lazy('app:home')
+
+    def get_object(self):
+        return self.request.user
