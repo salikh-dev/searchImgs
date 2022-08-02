@@ -71,15 +71,30 @@
                         {% endif %}
                       </div>
                   <div class="mb-4 pb-2">
+                    {% if request.user.facebook %}
                     <a href="{{ request.user.facebook }}" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-facebook-f fa-lg"></i>
-                    </button>
+                    </a>
+                    {% endif %}
+                    {% if not request.user.facebook %}
+                    {% endif %}
+                    {% if request.user.telegram %}
                     <a href="{{ request.user.telegram }}" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-telegram fa-lg"></i>
                     </a>
+                    {% endif %}
+                    {% if not request.user.telegram %}
+                    {% endif %}
+                    {% if request.user.instagram %}
                     <a href="{{ request.user.instagram }}" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-instagram fa-lg"></i>
                     </a>
+                    {% endif %}
+                    {% if not request.user.instagram %}
+                    {% endif %}
+                    {% if  request.user.pinterest %}
+                    <i>asd</i>
+                    {% endif %}
                   </div>
                   <a href="{% url 'app:settings' %}" class="btn btn-primary btn-rounded btn-lg">
                     Edit Profile

@@ -27,7 +27,7 @@
         }
 
         .gohome {
-            position: absolute;
+            position: fixed;
             top: 30px;
             text-decoration: none;
             color: #fff;
@@ -70,17 +70,29 @@
         #div_id_date_joined {
             display: none;
         }
-        
     </style>
     <a class="gohome" href="{% url 'app:home' %}"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="container text-light" style="width: 600px;">
         <h1>Edit profile</h1>
         <form method="post">
+           <div id="owerflow">
             {% csrf_token %}
             {{ form|crispy }}
+           </div>
             <button type="submit" class="btn btn-info w-100 text-center">update</button>
         </form>
     </div>
+    <script>
+        let facebook = document.getElementById('id_facebook')
+        let instagram = document.getElementById('id_instagram')
+        let telegram = document.getElementById('id_telegram')
+        let pinterset = document.getElementById('id_pinterest')
+
+        facebook.placeholder = "Facebook account links here"
+        instagram.placeholder = "instagram account links here"
+        telegram.placeholder = "telegram account links here"
+        pinterset.placeholder = "pinterset account links here"
+    </script>
 </body>
 
 </html>
