@@ -81,14 +81,14 @@
                         <a href="#">your bio here</a>
                         {% endif %}
                         {% if request.user.website %}
-                        <a href="{{ request.user.website }}">{{ request.user.website }}</a>
+                        <a href="{{ request.user.website }}" target="_blank">{{ request.user.website }}</a>
                         {% endif %}
                         {% if not request.user.website %}
                         {% endif %}
                       </div>
                   <div class="mb-4 pb-2">
                     {% if request.user.facebook %}
-                    <a href="https://fb.com/{{ request.user.facebook }}" class="btn btn-outline-primary btn-floating">
+                    <a href="https://fb.com/{{ request.user.facebook }}" target="_blank" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-facebook-f fa-lg"></i>
                     </a>
                     {% endif %}
