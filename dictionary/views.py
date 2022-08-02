@@ -23,15 +23,13 @@ def results(request):
     
     return render(request, "results.html", context)
 
-def fullscreen(request, pk):
-    img = UploadImg.objects.get(img_title=pk).all()
-    return render(request,"fullscreen.html", {"img":img})
+
 
 class Signup(generic.CreateView):
     template_name = 'registration/signup.html'
     form_class = SignUp
     def get_success_url(self):
-        return reverse("app:home")
+        return reverse("login")
     
     
 class Profile(generic.TemplateView):
@@ -48,9 +46,3 @@ class Edit_profile(generic.UpdateView):
         return self.request.user
 
 
-# class Edit_links(generic.UpdateView):
-#     template_name = "profile/sociallinks.html"
-#     success_url = reverse_lazy('app:profile')
-
-#     def get_object(self):
-#         return self.request.user

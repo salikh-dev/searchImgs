@@ -42,7 +42,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <section class="vh-100" style="background-color: #eee;">
+  <style>
+    .gohome {
+            position: fixed;
+            top: 30px;
+            text-decoration: none;
+            color: black;
+            left: 40px;
+            font-size: 2rem;
+        }
+  </style>
+  <section class="vh-100" style="background-color: #eee;">
+    <a class="gohome" href="{% url 'app:home' %}"><i class="fa-solid fa-arrow-left"></i></a>
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-12 col-xl-4">
@@ -101,15 +112,15 @@
                   </a>
                   <div class="d-flex justify-content-between text-center mt-5 mb-2">
                     <div>
-                      <p class="mb-2 h5">352</p>
+                      <p class="mb-2 h5">0</p>
                       <p class="text-muted mb-0">Posts</p>
                     </div>
                     <div class="px-3">
-                      <p class="mb-2 h5">8 B</p>
+                      <p class="mb-2 h5">0</p>
                       <p class="text-muted mb-0">Followers</p>
                     </div>
                     <div>
-                      <p class="mb-2 h5">4751</p>
+                      <p class="mb-2 h5">0</p>
                       <p class="text-muted mb-0">Following</p>
                     </div>
                   </div>
