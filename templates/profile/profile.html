@@ -70,7 +70,7 @@
                         class="rounded-circle img-fluid" style="width: 100px;" />
                         {% endif %}
                   </div>
-                  <h4 class="mb-2">{% if request.user.first_name %}{{ request.user.first_name }}{% endif %}{% if not request.user.first_name %}  {% endif %}.{% if request.user.last_name %}{{ request.user.last_name }}{% endif %}{% if not request.user.last_name %}  {% endif %} </h4>
+                  <h4 class="mb-2">{% if request.user.first_name %}{{ request.user.first_name }}{% endif %}{% if not request.user.first_name %}  {% endif %} . {% if request.user.last_name %}{{ request.user.last_name }}{% endif %}{% if not request.user.last_name %}  {% endif %} </h4>
                   <p class="text-muted mb-4">@{{request.user.username }}<span class="mx-2">|</span> <a
                       href="mailto:{{ request.user.email }}">{{ request.user.email }}</a></p>
                       <div class="flex">
@@ -80,31 +80,38 @@
                         {% if not request.user.bio %}
                         <a href="#">your bio here</a>
                         {% endif %}
+                        {% if request.user.website %}
+                        <a href="{{ request.user.website }}">{{ request.user.website }}</a>
+                        {% endif %}
+                        {% if not request.user.website %}
+                        {% endif %}
                       </div>
                   <div class="mb-4 pb-2">
                     {% if request.user.facebook %}
-                    <a href="{{ request.user.facebook }}" class="btn btn-outline-primary btn-floating">
+                    <a href="https://fb.com/{{ request.user.facebook }}" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-facebook-f fa-lg"></i>
                     </a>
                     {% endif %}
                     {% if not request.user.facebook %}
                     {% endif %}
                     {% if request.user.telegram %}
-                    <a href="{{ request.user.telegram }}" class="btn btn-outline-primary btn-floating">
+                    <a href="https://t.me/{{ request.user.telegram }}" target="_blank" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-telegram fa-lg"></i>
                     </a>
                     {% endif %}
                     {% if not request.user.telegram %}
                     {% endif %}
                     {% if request.user.instagram %}
-                    <a href="{{ request.user.instagram }}" class="btn btn-outline-primary btn-floating">
+                    <a href="https://instagram.com/{{ request.user.instagram }}" target="_blank" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-instagram fa-lg"></i>
                     </a>
                     {% endif %}
                     {% if not request.user.instagram %}
                     {% endif %}
                     {% if  request.user.pinterest %}
-                    <i>asd</i>
+                    <a href="https://pinterest.com/{{ request.user.pinterest }}" target="_blank" class="btn btn-outline-primary btn-floating">
+                      <i class="fab fa-pinterest fa-lg"></i>
+                    </a>
                     {% endif %}
                   </div>
                   <a href="{% url 'app:settings' %}" class="btn btn-primary btn-rounded btn-lg">
