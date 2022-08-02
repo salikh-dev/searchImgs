@@ -7,6 +7,10 @@ class MyUser(AbstractUser):
     email = models.EmailField(max_length=50, null=True, blank=True)
     bio = models.CharField(max_length=70, null=True, blank=True)
     img = models.ImageField()
+    facebook = models.CharField(max_length=70, null=True, blank=True )
+    telegram = models.CharField(max_length=70, null=True, blank=True)
+    instagram = models.CharField(max_length=70, null=True, blank=True)
+    pinterest = models.CharField(max_length=70, null=True, blank=True)
 
 
 

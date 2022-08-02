@@ -71,15 +71,15 @@
                         {% endif %}
                       </div>
                   <div class="mb-4 pb-2">
-                    <button type="button" class="btn btn-outline-primary btn-floating">
+                    <a href="{{ request.user.facebook }}" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-facebook-f fa-lg"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-primary btn-floating">
+                    <a href="{{ request.user.telegram }}" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-twitter fa-lg"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-primary btn-floating">
+                    </a>
+                    <a href="{{ request.user.instagram }}" class="btn btn-outline-primary btn-floating">
                       <i class="fab fa-skype fa-lg"></i>
-                    </button>
+                    </a>
                   </div>
                   <a href="{% url 'app:settings' %}" class="btn btn-primary btn-rounded btn-lg">
                     Edit Profile
