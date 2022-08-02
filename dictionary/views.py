@@ -5,9 +5,11 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserChangeForm
 
-def home(request):
+
+def home(request, pk):
     imges = UploadImg.objects.all()
-    return render(request, 'home.html', {"vid":imges})
+    return render(request, 'home.html', {"vid": imges})
+
 
 def results(request):
     serfun = request.GET.get("search", "")
@@ -17,21 +19,21 @@ def results(request):
         img = ''
 
     context = {
-        "video":img,
-        "value":serfun
-        }
-    
-    return render(request, "results.html", context)
+        "video": img,
+        "value": serfun
+    }
 
+    return render(request, "results.html", context)
 
 
 class Signup(generic.CreateView):
     template_name = 'registration/signup.html'
     form_class = SignUp
+
     def get_success_url(self):
         return reverse("login")
-    
-    
+
+
 class Profile(generic.TemplateView):
     template_name = "profile/profile.html"
 
@@ -43,5 +45,3 @@ class Edit_profile(generic.UpdateView):
 
     def get_object(self):
         return self.request.user
-
-
