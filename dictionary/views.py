@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserChangeForm
 
 
-def home(request, pk):
+def home(request):
     imges = UploadImg.objects.all()
     return render(request, 'home.html', {"vid": imges})
 
