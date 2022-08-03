@@ -48,3 +48,14 @@ class Edit_profile(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
+
+# class Public_profile(generic.DetailView):
+#     template_name = 'public.html'
+#     queryset = User.objects.filter()
+
+def public_profile(request, username):
+    user = MyUser.objects.filter(username=username)
+    context = {
+        'user': user
+    }
+    return render(request, 'profile/public.html', context)
