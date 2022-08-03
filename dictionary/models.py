@@ -3,28 +3,21 @@ from django.contrib.auth.models import AbstractUser
 
 
 class MyUser(AbstractUser):
-    pass
-
+    
+    img = models.ImageField(null=True, blank=True)
+    bio = models.CharField(max_length=70, null=True, blank=True)
 
 
 class Profile(models.Model):
-    first_name = models.CharField(max_length=50, null=True, blank=True)
+    user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
     last_name = models.CharField(max_length=50, null=True, blank=True)
     email = models.EmailField(max_length=50, null=True, blank=True)
-    bio = models.CharField(max_length=70, null=True, blank=True)
-    img = models.ImageField(null=True, blank=True)
     facebook = models.CharField(max_length=70, null=True, blank=True)
     telegram = models.CharField(max_length=70, null=True, blank=True)
     instagram = models.CharField(max_length=70, null=True, blank=True)
     pinterest = models.CharField(max_length=70, null=True, blank=True)
     website = models.CharField(max_length=100, null=True, blank=True)
 
-class Post(models.Model):
-    massage = models.CharField(max_length=100)
-    author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.massage
 
 
 class UploadImg(models.Model):
