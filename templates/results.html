@@ -6,14 +6,16 @@
 {% if video %}
 <div class="vid w-100 container ">
   {% for v in video %}
-    <div class="wrap">
-      <div class="height">
-        <img src="{{ v.img.url }}" alt="..." id="vid" width="300">
-        <h1 class="text-center mt-2">{{ v.img_title }}</h1>
-        <a href="{{ v.img.url }}" download="{{ v.img.url }}" class="btn btn-secondary">Download</a>
-        <i class="fa-solid fa-expand fa-lg icon"></i>
-      </div>
+
+  <div class="row" style="width: 455px;">
+    <div class="mt-2">
+      <img src="{{ v.img.url }}" class="w-100 shadow-1-strong rounded mb-4" alt="..." />
+    
+        <h1 class="mt-2">{{ v.img_title }}<a href="{{ v.img.url }}" download><i class="fa-solid fa-download"></i></a></h1>
+        
+
     </div>
+  </div>
   {% endfor %}
 </div>
 {% endif %}

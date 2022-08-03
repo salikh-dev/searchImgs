@@ -11,7 +11,8 @@ class MyUser(AbstractUser):
 
 class UploadImg(models.Model):
     img_title = models.CharField(max_length=150)
-    img = models.FileField()
+    img = models.ImageField()
+    
 
     def __str__(self):
         return self.img_title

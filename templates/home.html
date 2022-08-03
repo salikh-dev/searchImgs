@@ -19,19 +19,17 @@
   {% block content %}
   <div class="vid container">
     {% for v in imgpost %}
-
+    {% if  %}
     <div class="row" style="width: 455px;">
       <div class="col-lg-11 ">
         <img src="{{ v.img.url }}" class="w-100 shadow-1-strong rounded mb-4" alt="..." />
-      
-          <h1 class="mt-2">{{ v.img_title }}<a href="{{ v.img.url }}" download><i class="fa-solid fa-download"></i></a></h1>
-          
-
+        <h1 class="mt-2">{{ v.img_title }}<a href="{{ v.img.url }}" download><i class="fa-solid fa-download"></i></a>
+        </h1>
       </div>
     </div>
-  
+    {% endif %}
     {% endfor %}
-  </div>
+
   {% endblock content %}
 
 
