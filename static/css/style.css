@@ -76,6 +76,7 @@ nav .profile{
 
 .vid h1{
     position: relative;
+    left: 10px;
 }
 
 .vid h1 a{
