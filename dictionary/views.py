@@ -45,6 +45,6 @@ class Edit_profile(generic.UpdateView):
     form_class = User_change
     template_name = "profile/edit_profile.html"
     success_url = reverse_lazy('app:profile')
-
     def get_object(self):
         return self.request.user
+
