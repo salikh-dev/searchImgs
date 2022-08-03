@@ -3,4 +3,5 @@ from .models import *
 
 admin.site.register(MyUser)
 admin.site.register(UploadImg)
+admin.site.register(Post)
 

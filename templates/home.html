@@ -18,12 +18,12 @@
   <hr class="container">
   {% block content %}
   <div class="vid container ">
-    {% for v in vid %}
+    {% for v in imgpost %}
     <div class="wrap">
       <div class="height">
         <img src="{{ v.img.url }}" alt="..." id="img">
         <div class="flex">
-          <h1 class="text-center mt-2">{{ request.author }}</h1>
+          <h1 class="text-center mt-2">{{ v.img_title }}</h1>
         </div>
 
         <a href="{{ v.img.url }}" download class="btn btn-secondary">Download</a>

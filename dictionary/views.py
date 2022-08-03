@@ -7,8 +7,13 @@ from django.contrib.auth.forms import UserChangeForm
 
 
 def home(request):
+    post = Post.objects.all()
     imges = UploadImg.objects.all()
-    return render(request, 'home.html', {"vid": imges})
+    context ={
+        "post":post,
+        "imgpost": imges
+        }
+    return render(request, 'home.html',context)
 
 
 def results(request):

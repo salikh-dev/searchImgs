@@ -19,6 +19,12 @@ class Profile(models.Model):
     pinterest = models.CharField(max_length=70, null=True, blank=True)
     website = models.CharField(max_length=100, null=True, blank=True)
 
+class Post(models.Model):
+    massage = models.CharField(max_length=100)
+    author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.massage
 
 
 class UploadImg(models.Model):
