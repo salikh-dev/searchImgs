@@ -71,7 +71,7 @@
             display: none;
         }
     </style>
-    {% if request.user.is_authenticated %}
+
     <a class="gohome" href="{% url 'app:home' %}"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="container text-light" style="width: 600px;">
         <h1>Edit profile</h1>
@@ -83,7 +83,7 @@
             <button type="submit" class="btn btn-info w-100 text-center text-light">update</button>
         </form>
     </div>
-    {% endif %}
+
     <script>
         let facebook = document.getElementById('id_facebook')
         let instagram = document.getElementById('id_instagram')

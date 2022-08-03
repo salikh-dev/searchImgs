@@ -3,6 +3,11 @@ from django.contrib.auth.models import AbstractUser
 
 
 class MyUser(AbstractUser):
+    pass
+
+
+
+class Profile(models.Model):
     first_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=50, null=True, blank=True)
     email = models.EmailField(max_length=50, null=True, blank=True)
@@ -13,6 +18,7 @@ class MyUser(AbstractUser):
     instagram = models.CharField(max_length=70, null=True, blank=True)
     pinterest = models.CharField(max_length=70, null=True, blank=True)
     website = models.CharField(max_length=100, null=True, blank=True)
+
 
 
 class UploadImg(models.Model):

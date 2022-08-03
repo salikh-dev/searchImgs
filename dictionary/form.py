@@ -16,7 +16,5 @@ class SignUp(UserCreationForm):
 
 class User_change(UserChangeForm):
     class Meta:
-        model = User
-        fields = ("img", "first_name", "last_name", "username", "email",
-                  "bio", "facebook", "instagram", "telegram", "pinterest", "website")
-        field_classes = {"username": UsernameField}
+        model = Profile
+        fields = ("__all__")
