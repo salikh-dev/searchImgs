@@ -24,7 +24,8 @@
             {% endif %}
             {% if request.user.is_authenticated %}
             <li><a href="{% url 'app:profile' %}" class="dropdown-item">Profile</a></li>
-            <li><a href="{% url 'app:settings' %}" class="dropdown-item">Edit Profile</a></li>
+            <li><a href="{% url 'app:edit_profile' %}" class="dropdown-item">Edit Profile</a></li>
+            <li><a href="#" class="dropdown-item">Settings</a></li>
             <hr>
             <li><a href="{% url 'logout' %}" class="dropdown-item">Log Out</a></li>
             {% endif %}
