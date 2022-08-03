@@ -16,5 +16,5 @@ class SignUp(UserCreationForm):
 
 class User_change(UserChangeForm):
     class Meta:
-        model = User
+        model = Profile
         fields = ("__all__")
