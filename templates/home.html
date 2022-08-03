@@ -17,40 +17,19 @@
   {% include 'includes/nav.html' %}
   <hr class="container">
   {% block content %}
-  <div class="vid container ">
+  <div class="vid container">
     {% for v in imgpost %}
-    <div class="wrap">
-      <div class="height">
-        <img src="{{ v.img.url }}" alt="..." id="img">
-        <div class="flex">
-          <h1 class="text-center mt-2">{{ v.img_title }}</h1>
-        </div>
 
-        <a href="{{ v.img.url }}" download class="btn btn-secondary">Download</a>
-        <a href="#"><i class="fa-solid fa-expand fa-lg text-dark"></i></a>
+    <div class="row" style="width: 455px;">
+      <div class="col-lg-11 ">
+        <img src="{{ v.img.url }}" class="w-100 shadow-1-strong rounded mb-4" alt="..." />
+      
+          <h1 class="mt-2">{{ v.img_title }}<a href="{{ v.img.url }}" download><i class="fa-solid fa-download"></i></a></h1>
+          
+
       </div>
     </div>
-
-
-    <!-- Gallery -->
-<div class="row">
-  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-    <img
-      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Boat on Calm Water"
-    />
-
-    <img
-      src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Wintry Mountain Landscape"
-    />
-  </div>
-
-
-</div>
-<!-- Gallery -->
+  
     {% endfor %}
   </div>
   {% endblock content %}
