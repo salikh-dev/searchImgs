@@ -13,7 +13,10 @@ class SignUp(UserCreationForm):
         fields = ("first_name", "username")
         field_classes = {"username": UsernameField}
 
-
+class NewPostForm(forms.ModelForm):
+    class Meta:
+        model = UploadImg
+        fields = ("img","img_title")
 class User_change(UserChangeForm):
     class Meta:
         model = User

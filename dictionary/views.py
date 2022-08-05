@@ -48,16 +48,17 @@ class Edit_profile(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
+# class NewPostView(generic.CreateView):
+#     template_name = "newpost.html"
+#     form_class = NewPostForm
+#     def get_success_url(self):
+#         return reverse("app:home")
 
-# class Public_profile(generic.DetailView):
-#     template_name = 'public.html'
-#     queryset = User.objects.filter()
+
 
 def public_profile(request, pk):
     user = MyUser.objects.get(username=pk)
-    # user_profile = User.objects.get(user=user)
     context = {
-        'user': user,
-        # 'user_profile':user_profile
+        'user': user
     }
     return render(request, 'profile/public.html', context)
