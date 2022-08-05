@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect
 from .models import *
 from .form import *
 from django.views import generic
@@ -54,7 +54,19 @@ class Edit_profile(generic.UpdateView):
 #     def get_success_url(self):
 #         return reverse("app:home")
 
-
+def new_post(request, pk):
+    form = NewPostForm()
+    if request.method == "POST":
+        form = NewPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+    user = MyUser.objects.get(username=pk)
+    context = {
+        'author': user,
+        'form':form
+    }
+    return render(request, 'newpost.html', context)
 
 def public_profile(request, pk):
     user = MyUser.objects.get(username=pk)
