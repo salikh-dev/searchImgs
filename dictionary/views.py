@@ -54,7 +54,7 @@ class Edit_profile(generic.UpdateView):
 #     queryset = User.objects.filter()
 
 def public_profile(request, username):
-    user = MyUser.objects.filter(username=username)
+    user = User.objects.filter(username=username)
     context = {
         'user': user
     }

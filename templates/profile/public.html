@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ user.bio }}</h1>
+    {% if user %}
+    <h1>{{ user.username }}</h1>
+
+    {% endif %}
+    {% if not user %}
+    <h1>user not found</h1>
+    {% endif %}
 </body>
 </html>
