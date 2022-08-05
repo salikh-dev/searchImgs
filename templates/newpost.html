@@ -34,7 +34,7 @@
             font-size: 2rem;
         }
 
-        ul li{
+        ul li {
             display: none;
         }
     </style>
@@ -47,7 +47,18 @@
             <button type="submit" class="btn btn-info w-100 text-center">Send</button>
         </form>
     </div>
-    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        let autor = document.querySelector('#id_author')
+        let options = autor.querySelectorAll('option')
+        options.forEach(function (item) {
+            if (item.innerHTML == '{{ request.user.username }}') {
+                item.selected = true
+            }
+            else {
+                item.remove()
+            }
+        })
+    </script>
 </body>
 
 </html>

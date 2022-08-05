@@ -63,10 +63,10 @@
           <div class="card" style="border-radius: 15px;">
             <div class="card-body text-center">
               <div class="mt-3 mb-4">
-                {% if request.user.img %}
-                <img src="{{ request.user.img.url }}" alt="..."  id="profil">
+                {% if request.user.profile_pic %}
+                <img src="{{ request.user.profile_pic.url }}" alt="..."  id="profil">
                 {% endif %}
-                {% if not request.user.img %}
+                {% if not request.user.profile_pic %}
                 <img src="{% static 'imgs/userprofile.png' %}" class="rounded-circle img-fluid" style="width: 100px;" />
                 {% endif %}
               </div>
@@ -76,7 +76,7 @@
                 {% if notrequest.user.first_name %} {% endif %} .
                  {% if request.user.last_name %}{{ request.user.last_name }}{%endif %}
                  {% if not request.user.last_name %} {% endif %} </h4>
-              <p class="text-muted mb-4">@{{request.user.username }}<span class="mx-2">|</span> <a
+              <p class="text-muted mb-4">@<span id="user_name">{{request.user.username }}</span><span class="mx-2">|</span> <a
                   href="mailto:{{ request.user.email }}">{{ request.user.email }}</a></p>
 
               <div class="mb-4 pb-2">
@@ -114,6 +114,7 @@
     </div>
   </section>
   {% endif %}
+  <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
