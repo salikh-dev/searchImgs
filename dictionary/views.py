@@ -53,9 +53,11 @@ class Edit_profile(generic.UpdateView):
 #     template_name = 'public.html'
 #     queryset = User.objects.filter()
 
-def public_profile(request, username):
-    user = User.objects.filter(username=username)
+def public_profile(request, pk):
+    user = MyUser.objects.get(username=pk)
+    # user_profile = User.objects.get(user=user)
     context = {
-        'user': user
+        'user': user,
+        # 'user_profile':user_profile
     }
     return render(request, 'profile/public.html', context)
