@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserChangeForm
 
 
 def home(request):
-    imges = UploadImg.objects.all()
+    imges = Post.objects.all()
     context ={
         "imgpost": imges
         }
@@ -17,7 +17,7 @@ def home(request):
 def results(request):
     serfun = request.GET.get("search", "")
     if serfun and serfun != "":
-        img = UploadImg.objects.filter(img_title__contains=serfun).all()
+        img = Post.objects.filter(img_title__contains=serfun).all()
     else:
         img = ''
 
@@ -48,25 +48,13 @@ class Edit_profile(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
-# class NewPostView(generic.CreateView):
-#     template_name = "newpost.html"
-#     form_class = NewPostForm
-#     def get_success_url(self):
-#         return reverse("app:home")
+class NewPostView(generic.CreateView):
+    template_name = "newpost.html"
+    form_class = NewPostForm
+    def get_success_url(self):
+        return reverse("app:home")
 
-def new_post(request, pk):
-    form = NewPostForm()
-    if request.method == "POST":
-        form = NewPostForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect("/")
-    user = MyUser.objects.get(username=pk)
-    context = {
-        'author': user,
-        'form':form
-    }
-    return render(request, 'newpost.html', context)
+
 
 def public_profile(request, pk):
     user = MyUser.objects.get(username=pk)

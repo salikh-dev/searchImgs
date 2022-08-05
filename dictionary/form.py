@@ -15,8 +15,11 @@ class SignUp(UserCreationForm):
 
 class NewPostForm(forms.ModelForm):
     class Meta:
-        model = UploadImg
-        fields = ("img","img_title")
+        model = Post
+        fields = ("img","img_title", "author")
+        widgets = {
+            'img_title':forms.TextInput(attrs={"class": "form-control","placeholder":"Post title"})
+        }
 class User_change(UserChangeForm):
     class Meta:
         model = User
