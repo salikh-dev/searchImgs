@@ -67,4 +67,4 @@ def public_profile(request, pk):
 
 def notfoundview(request, exception):
 
-    return render(request, 'helpers/404.html',  status=404)
+    return render(request, '404.html',  status=404)

@@ -214,6 +214,7 @@ button {
   padding-bottom: 40px;
   max-width: 960px;
   margin: 0 auto;
+  color: #fff;
 }
 
 .message__text {
@@ -223,12 +224,14 @@ button {
   padding: 0 60px;
   max-width: 680px;
   margin: auto;
+  color: #fff;
 }
 
 .error__nav {
   max-width: 600px;
   margin: 40px auto 0;
   text-align: center;
+  color: #fff;
 }
 
 .e-nav__form {
@@ -572,7 +575,7 @@ button {
             <p class="message__text">We're sorry, the page you were looking for isn't found here. The link you followed may either be broken or no longer exists. Please try again, or take a look at our.</p>
           </div>
           <div class="error__nav e-nav">
-            <a href="" target="_blanck" class="e-nav__link"></a>
+            <a href="{% url 'app:home' %}"  class="e-nav__link"></a>
           </div>
         </div>
         <!-- END Content -->
