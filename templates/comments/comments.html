@@ -59,16 +59,19 @@
               </div>
         </div>
        </div>
+       {% if comment.user_comment %}
+        {% for y in user_comment %}
+        
         <div class="card shadow-0 border " style="background-color: #f0f2f5;" id="center">
             <div class="card-body p-4">
               <div class="card mb-4 w-100">
                 <div class="card-body w-100">
-                  <p>{{ user_comment.comment }}</p>
+                  <p>{{ y.comment }}</p>
       
                   <div class="d-flex justify-content-between w-100">
                     <div class="d-flex flex-row align-items-center">
                       <i class="fas fa-user"></i>
-                      <a class="text-dark" href="{% url 'app:public_profile' comment.author.username %}"><p class="small mb-0 ms-2">{{ comment.author.first_name }}</p></a>
+                      <a class="text-dark" href="{% url 'app:public_profile' y.author.username %}"><p class="small mb-0 ms-2">{{ y.author.first_name }}</p></a>
                     </div>
                       <div>likes: 0</div>
                       <div>replise: 0</div>
@@ -79,7 +82,8 @@
 
             </div>
           </div>
-
+        {% endfor %}
+        {% endif %}
         <form  method="post">
             {% csrf_token %}
             <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">

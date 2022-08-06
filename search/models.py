@@ -31,3 +31,11 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.comment
+
+
+class Followerslen(models.Model):
+    follower = models.CharField(max_length=100)
+    user = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.user

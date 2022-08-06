@@ -68,8 +68,12 @@
                 {% if not user.bio %}
                 
                 {% endif %}
-        
-                <a href="#" class="btn btn-info w-50 mt-2 text-light text-center">Follow</a>
+                <form action="/follow">
+                  {% csrf_token %}
+                  <input type="hidden" value="{{ user.username }}">
+
+                  <a href="#" class="btn btn-info w-50 mt-2 text-light text-center"><button class="btn btn-info" type="button">Follow</button></a>
+                </form>
 
               </div>
               
