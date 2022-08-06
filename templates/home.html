@@ -23,11 +23,12 @@
     <div class="row" style="width: 455px;">
       <div class="col-lg-11 ">
         <img src="{{ v.img.url }}" class="w-100 shadow-1-strong rounded mb-4" alt="..." />
-        <h1 class="mt-2">{{ v.img_title }}<a href="{{ v.img.url }}" download><i class="fa-solid fa-download"></i></a>
+        <h1 class="mt-2">{{ v.img_title }}  <a href="{{ v.img.url }}" download><i class="fa-solid fa-download"></i></a>
         </h1>
-        <div class="flex">
-          <a href="{% url 'app:public_profile' v.author.username %}">{{ v.author.username }}</a>
-        <p>{{ v.creat_time }}</p>
+        <div class="flex" style="display: flex; justify-content: center;">
+          <a href="{% url 'app:comments' v.pk %} " class="text-dark fa-lg"><i class="fa-solid fa-comment "></i></a>
+          <a style="margin-left: 60px; color: #000; text-decoration: none;" href="{% url 'app:public_profile' v.author.username %}"><i class="fa-solid fa-user-check" style="margin-left: 10px;"></i>@{{ v.author.username }}</a>
+          <p style="margin-left: 60px;"><i class="fa-solid fa-calendar-check text-dark" style="margin-right: 10px;"></i>{{ v.creat_time }}</p>
         </div>
       </div>
     </div>

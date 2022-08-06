@@ -64,7 +64,17 @@ def public_profile(request, pk):
     return render(request, 'profile/public.html', context)
 
 
+def comments(request, pk):
+    comment = Post.objects.get(id=pk)
+    context ={
+        "comment":comment
+    }
+    return render(request, "comments/comments.html", context)
 
-def notfoundview(request, exception):
 
-    return render(request, '404.html',  status=404)
+def handler400(request, exception):
+    return render(request, 'helpers/404.html',  status=404)
+
+
+# def handler500(request, exception):
+#     return render(request, 'helpers/500.html', status=500)

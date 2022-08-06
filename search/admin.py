@@ -3,3 +3,4 @@ from .models import *
 
 admin.site.register(MyUser)
 admin.site.register(Post)
+admin.site.register(Comments)
