@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import handler400, handler403, handler404, handler500
 from .views import *
 
 
@@ -14,3 +15,4 @@ urlpatterns = [
     path('<str:pk>', public_profile, name='public_profile'),
 ]
 
+handler400 = "search.views.notfoundview"

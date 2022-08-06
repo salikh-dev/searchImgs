@@ -62,3 +62,9 @@ def public_profile(request, pk):
         'user': user
     }
     return render(request, 'profile/public.html', context)
+
+
+
+def notfoundview(request, exception):
+
+    return render(request, 'helpers/404.html',  status=404)
