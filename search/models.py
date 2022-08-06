@@ -30,4 +30,4 @@ class Comments(models.Model):
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.author
+        return self.comment
