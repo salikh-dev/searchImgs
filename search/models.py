@@ -25,12 +25,6 @@ class Post(models.Model):
     def __str__(self):
         return self.img_title
 
-class Comments(models.Model):
-    comment = models.CharField(max_length=200)
-    author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.comment
 
 
 class Followerslen(models.Model):

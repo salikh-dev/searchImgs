@@ -26,10 +26,3 @@ class User_change(UserChangeForm):
         fields = ('profile_pic', 'username', 'first_name', 'last_name', 'bio')
 
 
-class comment_form(forms.ModelForm):
-    class Meta:
-        model = Comments
-        fields=('comment', 'author')
-        widgets = {
-            'comment':forms.TextInput(attrs={"class":"form-control w-100", "placeholder":"Enter your comment..."})
-        }

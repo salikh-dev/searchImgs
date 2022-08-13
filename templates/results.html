@@ -13,7 +13,7 @@
     
         <h1 class="mt-2">{{ v.img_title }}<a href="{{ v.img.url }}" download><i class="fa-solid fa-download"></i></a></h1>
         <div class="flex" style="display: flex; justify-content: center;">
-          <a href="{% url 'app:comments' v.pk %} " class="text-dark fa-lg"><i class="fa-solid fa-comment "></i></a>
+          <a href="#" class="text-dark fa-lg"><i class="fa-solid fa-comment "></i></a>
           <a style="margin-left: 60px; color: #000; text-decoration: none;" href="{% url 'app:public_profile' v.author.username %}"><i class="fa-solid fa-user-check" style="margin-left: 10px;"></i>@{{ v.author.username }}</a>
           <p style="margin-left: 60px;"><i class="fa-solid fa-calendar-check text-dark" style="margin-right: 10px;"></i>{{ v.creat_time }}</p>
         </div>

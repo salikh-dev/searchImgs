@@ -64,22 +64,7 @@ def public_profile(request, pk):
     return render(request, 'profile/public.html', context)
 
 
-def comments(request, pk):
-    form = comment_form()
-    if request.method == "POST":
-        form = comment_form(request.POST)
-        if form.is_valid():
-            form.save()
-            return reverse_lazy('app:comments', )
-        
-    comment = Post.objects.get(id=pk)
-    user_comment = Comments.objects.all()
-    context ={
-        "comment":comment,
-        "user_comment":user_comment,
-        "form":form
-    }
-    return render(request, "comments/comments.html", context)
+
 
 
 def handler400(request, exception):
