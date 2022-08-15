@@ -13,7 +13,6 @@ def home(request):
         }
     return render(request, 'home.html',context)
 
-
 def results(request):
     serfun = request.GET.get("search", "")
     if serfun and serfun != "":
