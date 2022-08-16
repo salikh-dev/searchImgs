@@ -6,6 +6,7 @@ from .form import *
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.views import get_user_model
 
 
 def home(request):
@@ -75,3 +76,15 @@ def handler400(request, exception):
 # def handler500(request, exception):
 #     return render(request, 'helpers/500.html', status=500)
 
+
+User = get_user_model()
+
+def users(request):
+    usersnum = User.objects.count()
+    users = User.objects.all()
+    context = {
+        "usersnum":usersnum,
+        "users":users
+    }
+
+    return render(request, "user.html", context)
