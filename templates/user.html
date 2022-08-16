@@ -117,16 +117,24 @@
 
                     <li class="list-group-item">
                       <div class="media">
-                        <div class="media-left">
-                          <a class="avatar avatar-busy" href="javascript:void(0)">
-                            {% if x.profile_pic %}
-                            <img src="{{ x.profile_pic.url }}" class="rounded-circle me-3" height="50px" width="50px" />
-                            {% endif %}
-                            {% if not x.profile_pic %}
-                            <img src="{% static 'imgs/userprofile.png' %}" class="rounded-circle me-3" height="50px" width="50px" />
-                            {% endif %}
-                            
-                          </a>
+                        <div class="media-left d-flex">
+                         <div>
+                            <a class="avatar avatar-busy" href="javascript:void(0)">
+                                {% if x.profile_pic %}
+                                <img src="{{ x.profile_pic.url }}" class="rounded-circle me-3" height="50px" width="50px" />
+                                {% endif %}
+                                {% if not x.profile_pic %}
+                                <img src="{% static 'imgs/userprofile.png' %}" class="rounded-circle me-3" height="50px" width="50px" />
+                                {% endif %}
+                                
+                              </a>
+                         </div>
+                         <div>
+                            <div>
+                                <h2>{{ x.first_name }}</h2>
+                                <h4>{{ x.last_name }}</h4>
+                            </div>
+                         </div>
                         </div>
                         <div class="media-body ">
                          
