@@ -1,6 +1,5 @@
 from turtle import down
 from django.urls import path
-from django.conf.urls import handler400, handler403, handler404, handler500
 from .views import *
 
 
@@ -16,6 +15,3 @@ urlpatterns = [
     path('<str:pk>', public_profile, name='public_profile'),
     path('download/<int:pk>', home, name='download')
 ]
-
-handler400 = "search.views.handler400"
-# handler500 = "search.views.handler500"

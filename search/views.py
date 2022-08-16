@@ -1,3 +1,5 @@
+from email.mime import base
+from multiprocessing import context
 from django.shortcuts import render, reverse, redirect
 from .models import *
 from .form import *
@@ -72,3 +74,4 @@ def handler400(request, exception):
 
 # def handler500(request, exception):
 #     return render(request, 'helpers/500.html', status=500)
+
