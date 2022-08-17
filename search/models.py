@@ -1,3 +1,8 @@
+from distutils.command.upload import upload
+from email.policy import default
+import profile
+from pyexpat import model
+from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.timezone import datetime
@@ -12,6 +17,11 @@ class MyUser(AbstractUser):
         verbose_name = 'My User'
         verbose_name_plural = 'User'
 
+
+class Profile(models.Model):
+    cust_user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
+    bio = models.CharField(max_length=70, blank=True)
+    img =  models.ImageField(default="userprofile.png", upload_to="profile_pic")
 
 
 class Post(models.Model):
