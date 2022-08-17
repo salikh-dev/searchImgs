@@ -39,12 +39,8 @@ class Signup(generic.CreateView):
         return reverse("login")
 
 
-# class Profile(generic.TemplateView):
-#     template_name = "profile/profile.html"
-
-def prfoile(request, pk):
-    
-    return render(request, 'profile/profile.html', context)
+class Profile(generic.TemplateView):
+    template_name = "profile/profile.html"
 
 
 class Edit_profile(generic.UpdateView):
