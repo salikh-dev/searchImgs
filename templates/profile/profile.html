@@ -78,13 +78,8 @@
 
               <div class="mb-4 pb-2">
 
-                {% if request.user.bio %}
-                <h4>Bio: {{ request.user.bio }}</h4>
-                {% endif %}
-                {% if not request.user.bio %}
-                <a href="{% url 'app:edit_profile' %}">your bio here</a>
-                {% endif %}
-
+                <h4>Bio: {{ user.profile.bio }}</h4>
+              
 
               </div>
               <a href="{% url 'app:edit_profile' %}" class="btn btn-primary btn-rounded btn-lg">

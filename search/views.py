@@ -39,8 +39,12 @@ class Signup(generic.CreateView):
         return reverse("login")
 
 
-class Profile(generic.TemplateView):
-    template_name = "profile/profile.html"
+# class Profile(generic.TemplateView):
+#     template_name = "profile/profile.html"
+
+def prfoile(request, pk):
+    
+    return render(request, 'profile/profile.html', context)
 
 
 class Edit_profile(generic.UpdateView):
@@ -50,6 +54,12 @@ class Edit_profile(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
+class EditProfileView(generic.UpdateView):
+    form_class = EditProfileForm
+    template_name = "profile/profisionaledit.html"
+    success_url = reverse_lazy('app:profile')
+    def get_object(self):
+        return self.request.user
 class NewPostView(generic.CreateView):
     template_name = "newpost.html"
     form_class = NewPostForm

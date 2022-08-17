@@ -1,4 +1,6 @@
 from dataclasses import fields
+from logging import PlaceHolder
+from tkinter import Widget
 from django.contrib.auth.views import get_user_model
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UsernameField, UserChangeForm
@@ -22,7 +24,14 @@ class NewPostForm(forms.ModelForm):
         }
 class User_change(UserChangeForm):
     class Meta:
-        model = MyUser
-        fields = ('profile_pic', 'username', 'first_name', 'last_name', 'bio')
+        model = User
+        fields = ('username', 'first_name', 'last_name')
+
+class EditProfileForm(UserChangeForm):
+    class Meta:
+        model = Profile
+        fields = ('cust_user','img', "bio")
+        # widgets = {'bio': forms.CharField(attrs={"class":"form-control", "placeholder": "enter your bio"})
+        # }
 
 

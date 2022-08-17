@@ -10,8 +10,6 @@ from django.utils.timezone import datetime
 class MyUser(AbstractUser):
     is_organiser = models.BooleanField(default=False)
     is_agent = models.BooleanField(default=False)
-    profile_pic = models.ImageField(null=True, blank=True)
-    bio = models.CharField(max_length=70, null=True, blank=True)
     
     class Meta:
         verbose_name = 'My User'
