@@ -15,5 +15,4 @@ urlpatterns = [
     path('<str:pk>', public_profile, name='public_profile'),
     path('download/<int:pk>', home, name='download'),
     path('users/', users, name="users"),
-    path('edit/profile/', EditProfileView.as_view(), name="editprofile")
 ]
