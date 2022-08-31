@@ -7,6 +7,7 @@ env = environ.Env(
 
 environ.Env.read_env()
 
+
 DEBUG = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
 
