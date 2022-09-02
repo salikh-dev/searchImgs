@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'search',
 
-    "crispy_forms",
-    "crispy_bootstrap5",
+    # "crispy_forms",
+    # "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -140,6 +140,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'search.MyUser'
 
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+# CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+# CRISPY_TEMPLATE_PACK = "bootstrap5"

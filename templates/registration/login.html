@@ -1,4 +1,4 @@
-{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -173,7 +173,7 @@
             <h1>Login</h1>
             <form method="post">
                 {% csrf_token %}
-                {{ form|crispy }}
+                {{ form }}
                 <button type="submit" class="btn btn-primary w-100 text-center">Login</button>
             </form>
             <a style="color:#fff;" href="{% url 'app:signup' %}">Don't have an account yet?</a>

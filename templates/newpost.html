@@ -1,4 +1,4 @@
-{% load crispy_forms_tags %}
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +46,7 @@
         <h1>add new post</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form|crispy }}
+            {{ form }}
             <button type="submit" class="btn btn-info w-100 text-center">Send</button>
         </form>
     </div>

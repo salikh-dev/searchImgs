@@ -1,4 +1,4 @@
-{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,7 +78,7 @@
         <form method="post" ><!-- bu yerda ## enctype="multipart/form-data" ## rasm yuklash uchun  -->
            <div id="owerflow">
             {% csrf_token %}
-            {{ form|crispy }}
+            {{ form }}
            </div>
             <button type="submit" class="btn btn-info w-100 text-center text-light">update</button>
         </form>
