@@ -1,31 +1,31 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: sans-serif;
-    text-rendering:optimizeLegibility;
+    text-rendering: optimizeLegibility;
 }
 
-form{
+form {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     width: 600px;
 }
 
-form input{
+form input {
     width: 550px;
 }
 
-.vid{
+.vid {
     display: flex;
     flex-wrap: wrap;
 }
 
-.vid #aboute{
+.vid #aboute {
     display: flex;
     top: 10px;
     left: 10px;
@@ -37,22 +37,22 @@ form input{
     height: 70px;
 }
 
-hr{
-    width:100%;
+hr {
+    width: 100%;
 }
 
-.vid #aboute .icon{
+.vid #aboute .icon {
     color: #000;
 }
 
-.vid #img{
+.vid #img {
     width: 300px;
     margin-left: 20px;
     margin-top: 10px;
 }
 
 
-.height{
+.height {
     height: 700px;
 }
 
@@ -60,27 +60,27 @@ hr{
     position: relative !important;
 }
 
-nav .icon{
+nav .icon {
     position: absolute;
 }
 
-nav .home{
+nav .home {
     top: 5px;
     left: 0px;
 }
 
-nav .profile{
+nav .profile {
     top: -19px;
     left: 900px;
     font-size: 1.5rem;
 }
 
-.vid h1{
+.vid h1 {
     position: relative;
     left: 10px;
 }
 
-.vid h1 a{
+.vid h1 a {
     position: absolute;
     top: 10px;
     left: 340px;
@@ -89,6 +89,6 @@ nav .profile{
 }
 
 
-#id_author{
+#id_author {
     display: none;
 }
