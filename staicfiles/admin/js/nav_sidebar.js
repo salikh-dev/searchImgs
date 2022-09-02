@@ -31,7 +31,7 @@
         }
         main.classList.toggle('shifted', navSidebarIsOpen === 'true');
 
-        toggleNavSidebar.addEventListener('click', function() {
+        toggleNavSidebar.addEventListener('click', function () {
             if (navSidebarIsOpen === 'true') {
                 navSidebarIsOpen = 'false';
                 disableNavLinkTabbing();
@@ -53,7 +53,7 @@
             return;
         }
         navSidebar.querySelectorAll('th[scope=row] a').forEach((container) => {
-            options.push({title: container.innerHTML, node: container});
+            options.push({ title: container.innerHTML, node: container });
         });
 
         function checkValue(event) {
@@ -94,7 +94,7 @@
         const storedValue = sessionStorage.getItem('django.admin.navSidebarFilterValue');
         if (storedValue) {
             nav.value = storedValue;
-            checkValue({target: nav, key: ''});
+            checkValue({ target: nav, key: '' });
         }
     }
     window.initSidebarQuickFilter = initSidebarQuickFilter;
