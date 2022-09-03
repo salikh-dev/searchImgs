@@ -1,8 +1,3 @@
-from distutils.command.upload import upload
-from email.policy import default
-import profile
-from pyexpat import model
-from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.timezone import datetime
@@ -27,7 +22,7 @@ class Post(models.Model):
     img = models.ImageField()
     img_title = models.CharField(max_length=150)
     comment = models.TextField(max_length=700)
-    creat_time = models.DateField(default=datetime.now)
+    creat_time = models.CharField(default=datetime.now().strftime("%H:%M:%S"))
     likes = models.IntegerField(default=0)
 
     def __str__(self):
