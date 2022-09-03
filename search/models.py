@@ -22,7 +22,7 @@ class Post(models.Model):
     img = models.ImageField()
     img_title = models.CharField(max_length=150)
     comment = models.TextField(max_length=700)
-    creat_time = models.CharField(default=datetime.now().strftime("%H:%M:%S"))
+    creat_time = models.IntegerField(default=datetime.now().strftime("%H:%M:%S"))
     likes = models.IntegerField(default=0)
 
     def __str__(self):
