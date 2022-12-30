@@ -14,4 +14,4 @@ urlpatterns = [
 
 
 handler400 = "search.views.handler400"
-# handler500 = "search.views.handler500"
+handler500 = "search.views.handler500"
