@@ -1,5 +1,3 @@
-from email.mime import base
-from multiprocessing import context
 from django.shortcuts import render, reverse, redirect
 from .models import *
 from .form import *
@@ -67,16 +65,11 @@ def public_profile(request, pk):
     return render(request, 'profile/public.html', context)
 
 
-
-
-
 def handler400(request, exception):
     return render(request, 'helpers/404.html',  status=404)
 
-
-# def handler500(request, exception):
-#     return render(request, 'helpers/500.html', status=500)
-
+def handler500(request, *args, **argv):
+    return render(request, 'pages/helpers/500tml')
 
 User = get_user_model()
 
